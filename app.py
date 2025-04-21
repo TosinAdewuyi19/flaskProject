@@ -1,6 +1,11 @@
 from flask import Flask
 from pymongo import MongoClient
 from flask_jwt_extended import JWTManager
+from .auth import auth_bp
+from .listings import listings_bp
+from .bids import bids_bp
+
+
 
 app = Flask(__name__)
 
@@ -10,8 +15,9 @@ db= client["auction_db"]
 app.config["JWT_SECRET_KEY"] = "YOUR_SECRET_KEY"
 JWT = JWTManager(app)
 
-from controllers.user_controller import user_bp
-app.register_blueprint(user_bp)
+app.register_blueprint(auth_bp)
+app.register_blueprint(listings_bp)
+app.register_blueprint(bids_bp)
 
 if __name__ == '__main__':
     app.run()

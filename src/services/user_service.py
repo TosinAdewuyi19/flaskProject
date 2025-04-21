@@ -1,4 +1,4 @@
-from models.user import User
+from src.models.user import User
 
 class UserService:
     def register_user(self, username, email, password):

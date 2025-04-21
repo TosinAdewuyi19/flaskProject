@@ -5,13 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60b983a1-fd1a-43fc-9b1b-4dd78d164087" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/FlaskProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FlaskProject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Auth/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/extenssion.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/listings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/auction_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/auction_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/user_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/auction_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/auction_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/user_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/user_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -67,7 +84,7 @@
       <option name="presentableId" value="Default" />
       <updated>1745070082172</updated>
       <workItem from="1745070083257" duration="29000" />
-      <workItem from="1745172067293" duration="2663000" />
+      <workItem from="1745172067293" duration="12315000" />
     </task>
     <servers />
   </component>

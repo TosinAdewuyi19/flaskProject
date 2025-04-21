@@ -1,12 +1,12 @@
 from flask import Blueprint, jsonify, request
-from services.auction_services import AuctionServices
+from src. services.auction_service import AuctionServices
 
 auction_bp = Blueprint('auction', __name__)
 auction_services = AuctionServices()
 
 @auction_bp.route('/list', methods=['GET'])
 def list_actions():
-    auctions = auction_services.get_auctions()
+    auctions = auction_services.get_auction()
     return jsonify(auctions)
 
 @auction_bp.route('/create', methods=['POST'])

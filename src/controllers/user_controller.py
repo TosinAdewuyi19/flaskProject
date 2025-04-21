@@ -1,21 +1,44 @@
-from flask import Blueprint, request,jsonify
+from Demos.win32ts_logoff_disconnected import username
+from flask import render_template, request,redirect, url_for, flash, session
+from . import auth_bp
+from src.models.user import create_user, find_user_by_email, check_password_hash
 
-from src.services.user_service import UserService
 
-user_controller = Blueprint('user_controller', __name__)
-user_service = UserService()
 
-@user_controller.route('/register', methods=['POST'])
+@auth_bp.route('/register', methods=['GET','POST'])
 def register():
-    data = request.get_json()
-    user = user_service.register_user(data["username"], data["password"], data["email"])
-    return jsonify({"message": "User registered successfully!", "username": user.username})
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        email = request.form['email']
 
-@user_controller.route('/login', methods=['POST'])
+        if find_user_by_email(email):
+            flash('Email already registered')
+            return redirect(url_for('user_controller.register'))
+
+        create_user(username, password, email)
+        flash("Registration done successfully. Please login to continue.")
+        return redirect(url_for('user_controller.login'))
+    return render_template("register.html")
+
+
+@auth_bp.route('/login', methods=['GET','POST'])
 def login():
-    data = request.json
-    user = user_service.login_user(data["username"], data["password"], data["email"])
-    if user:
-        return jsonify({"message": "User logged in!", "username": user["username"]})
-    else:
-        return jsonify({"message": "Invalid username or password!"})
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        user = find_user_by_email(email)
+
+        if user and check_password_hash(user.password, password):
+            session["user_id"] = str(user.id)
+            session["username"] = user["username"]
+            flash("Login successfully")
+        else:
+            flash("Invalid email or password")
+    return render_template('login.html')
+
+@auth_bp.route('/logout')
+def logout():
+    session.clear()
+    flash("Logout successfully")
+    return redirect(url_for('user_controller.login'))
