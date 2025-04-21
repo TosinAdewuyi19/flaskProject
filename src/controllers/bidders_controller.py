@@ -1,16 +1,26 @@
-from flask import Blueprint, jsonify, request
-from src. services.bidder_service import AuctionServices
+from flask import Blueprint, request, jsonify
+from src.services.bidder_service import BidderService
+from src.dto.bidder_dto import BidderDTO
+from src.exceptions.custom_exceptions import BadRequestError
 
-auction_bp = Blueprint('auction', __name__)
-auction_services = AuctionServices()
+bidders_bp = Blueprint('bidders', __name__)
+bidder_service = BidderService()
 
-@auction_bp.route('/list', methods=['GET'])
-def list_actions():
-    auctions = auction_services.get_auction()
-    return jsonify(auctions)
+@bidders_bp.route('/register', methods=['POST'])
+def register_bidder():
+    try:
+        data = request.json
+        bidder_dto = BidderDTO.from_dict(data)
+        result = bidder_service.register_bidder(bidder_dto)
+        return jsonify({"message": "Bidder registered", "data": result}), 201
+    except BadRequestError as e:
+        return jsonify({"error": str(e)}), 400
+    except Exception as e:
+        return jsonify({"error": "Internal Server Error"}), 500
 
-@auction_bp.route('/create', methods=['POST'])
-def create_action():
-    data = request.json()
-    auction = auction_services.create_auction(data["item_name"], data["starting_bid"], data["end_time"])
-    return jsonify({"message":"Auction created successfully"})
+@bidders_bp.route('/<bidder_id>', methods=['GET'])
+def get_bidder(bidder_id):
+    bidder = bidder_service.get_bidder_by_id(bidder_id)
+    if bidder:
+        return jsonify(bidder), 200
+    return jsonify({"error": "Bidder not found"}), 404

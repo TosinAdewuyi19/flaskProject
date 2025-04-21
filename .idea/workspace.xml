@@ -4,40 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60b983a1-fd1a-43fc-9b1b-4dd78d164087" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/data/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/models/bid.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/models/user.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/models/usertype.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/models/validator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/repositories/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/repositories/bidder_repo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/repositories/listings_repo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/repositories/seller_repo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dto/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dto/bidder_dto.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dto/seller_dto.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exceptions/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exceptions/custom_exceptions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/listing_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/listings.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Auth/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/auction_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/bidders_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/user_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/sellers_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/auction.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/bidders.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/bid.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/listings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/listings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/listings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/seller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/listings_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/listings_dto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/auction_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/bidder_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/user_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/seller_service.py" afterDir="false" />
-    </list>
+    <list default="true" id="60b983a1-fd1a-43fc-9b1b-4dd78d164087" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -112,7 +79,7 @@
       <option name="presentableId" value="Default" />
       <updated>1745070082172</updated>
       <workItem from="1745070083257" duration="29000" />
-      <workItem from="1745172067293" duration="23032000" />
+      <workItem from="1745172067293" duration="23376000" />
     </task>
     <servers />
   </component>
