@@ -1,7 +1,6 @@
-from Demos.win32ts_logoff_disconnected import username
 from flask import render_template, request,redirect, url_for, flash, session
 from . import auth_bp
-from src.models.user import create_user, find_user_by_email, check_password_hash
+from src.data.models.seller import create_user, find_user_by_email, check_password_hash
 
 
 

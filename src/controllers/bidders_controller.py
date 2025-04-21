@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request
-from src. services.auction_service import AuctionServices
+from src. services.bidder_service import AuctionServices
 
 auction_bp = Blueprint('auction', __name__)
 auction_services = AuctionServices()

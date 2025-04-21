@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, url_for, session, flash
 from . import listings_bp
-from app.models.listing import create_listing, get_all_listings, get_listing_by_id
-from bson.objectid import ObjectId
+from src.data.models.listings import create_listing, get_all_listings, get_listing_by_id
+
 
 @listings_bp.route('/')
 def view_listings():

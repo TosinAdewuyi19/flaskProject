@@ -1,5 +1,5 @@
 from flask import db
-from src.models.auction import Auction
+from src.data.models.bidders import Auction
 
 
 class AuctionServices:

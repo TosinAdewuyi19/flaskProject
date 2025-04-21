@@ -1,5 +1,5 @@
 from datetime import datetime
-from app.extensions import mongo
+from src.app import mongo
 from bson.objectid import ObjectId
 
 def create_listing(title, description, start_price, image_url, seller_id, seller_name):
