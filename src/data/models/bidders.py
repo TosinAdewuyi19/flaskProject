@@ -1,14 +1,25 @@
-class Auction:
-    def __init__(self, item_name, starting_bid, end_time):
-        self.item_name = item_name
-        self.starting_bid = starting_bid
-        self.end_time = end_time
-        self.bids = []
+class Bidder:
+    def __init__(self, name, email, password, _id=None):
+        self._id = str(_id) if _id else None
+        self.name = name
+        self.email = email
+        self.password = password
 
-    def add_item_to_dict(self):
-        return {
-            'item_name': self.item_name,
-            'starting_bid': self.starting_bid,
-            'end_time': self.end_time,
-            'bids': self.bids
+    def to_dict(self):
+        data = {
+            "name": self.name,
+            "email": self.email,
+            "password": self.password
         }
+        if self._id:
+            data["_id"] = self._id
+        return data
+
+    @classmethod
+    def from_dict(cls, data):
+        return cls(
+            name=data.get("name"),
+            email=data.get("email"),
+            password=data.get("password"),
+            _id=data.get("_id")
+        )

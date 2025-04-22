@@ -1,12 +1,16 @@
-from flask import db
-from src.data.models.bidders import Auction
+from src.repositories.bidder_repo import BidderRepository
+from src.exceptions.custom_exceptions import BadRequestError
 
+class BidderService:
+    def __init__(self):
+        self.bidder_repo = BidderRepository()
 
-class AuctionServices:
-    def create_auction(self, item_name, starting_bid, end_bid, end_time):
-        auction = Auction(item_name, starting_bid, end_time,)
-        db.auctions.insert(auction.add_item_to_dict())
-        return auction
+    def register_bidder(self, bidder_dto):
+        existing = self.bidder_repo.find_by_email(bidder_dto.email)
+        if existing:
+            raise BadRequestError("Bidder already exists with this email")
+        bidder_data = bidder_dto.to_dict()
+        return self.bidder_repo.insert_bidder(bidder_data)
 
-    def get_auction(self):
-        return list(db.auctions.find({}, {"_id": 0}))
+    def get_bidder_by_id(self, bidder_id):
+        return self.bidder_repo.find_by_id(bidder_id)

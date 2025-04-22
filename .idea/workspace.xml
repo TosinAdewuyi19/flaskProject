@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60b983a1-fd1a-43fc-9b1b-4dd78d164087" name="Changes" comment="" />
+    <list default="true" id="60b983a1-fd1a-43fc-9b1b-4dd78d164087" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/dto/user_dto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/models/bid.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/bid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/models/bidders.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/bidders.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/models/listings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/listings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/models/seller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/seller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/models/usertype.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/usertype.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/models/validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/validator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/repositories/bidder_repo.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repositories/bidder_repo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/repositories/listings_repo.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repositories/listings_repo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/repositories/seller_repo.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repositories/seller_repo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto/bidder_dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/bidder_dto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto/listings_dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/listings_dto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto/seller_dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/seller_dto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/bidder_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/bidder_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/listing_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/listing_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/seller_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/seller_service.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,7 +98,7 @@
       <option name="presentableId" value="Default" />
       <updated>1745070082172</updated>
       <workItem from="1745070083257" duration="29000" />
-      <workItem from="1745172067293" duration="23376000" />
+      <workItem from="1745172067293" duration="28260000" />
     </task>
     <servers />
   </component>

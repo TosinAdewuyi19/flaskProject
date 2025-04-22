@@ -1,3 +1,5 @@
+from src.data.models.validator import Validator
+
 class BidderDTO:
     def __init__(self, name, email, password):
         self.name = name
@@ -6,8 +8,11 @@ class BidderDTO:
 
     @classmethod
     def from_dict(cls, data):
-        if not all(k in data for k in ("name", "email", "password")):
+        if not all(v in data for v in ("name", "email", "password")):
             raise ValueError("Missing required fields for bidder")
+        Validator.validate_required_fields(data, ["name", "email", "password"])
+        if not Validator.is_email_valid(data["email"]):
+            raise ValueError("Invalid email format")
         return cls(
             name=data["name"],
             email=data["email"],

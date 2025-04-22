@@ -1,3 +1,5 @@
+from src.data.models.validator import Validator
+
 class SellerDTO:
     def __init__(self, name, email, store_name, password):
         self.name = name
@@ -9,6 +11,9 @@ class SellerDTO:
     def from_dict(cls, data):
         if not all(k in data for k in ("name", "email", "store_name", "password")):
             raise ValueError("Missing required fields for seller")
+        Validator.validate_required_fields(data, ["name", "email", "password"])
+        if not Validator.is_email_valid(data["email"]):
+            raise ValueError("Invalid email format")
         return cls(
             name=data["name"],
             email=data["email"],

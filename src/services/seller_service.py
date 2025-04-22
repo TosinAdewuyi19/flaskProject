@@ -1,10 +1,16 @@
-from src.data.models.seller import User
+from src.repositories.seller_repo import SellerRepository
+from src.exceptions.custom_exceptions import BadRequestError
 
-class UserService:
-    def register_user(self, username, email, password):
-        user = User(username, email, password)
-        user.save_to_db()
-        return user
+class SellerService:
+    def __init__(self):
+        self.seller_repo = SellerRepository()
 
-    def login_user(self, username, email, password):
-        return User.authenticate(email, password)
+    def register_seller(self, seller_dto):
+        existing = self.seller_repo.find_by_email(seller_dto.email)
+        if existing:
+            raise BadRequestError("Seller already exists with this email")
+        seller_data = seller_dto.to_dict()
+        return self.seller_repo.insert_seller(seller_data)
+
+    def get_seller_by_id(self, seller_id):
+        return self.seller_repo.find_by_id(seller_id)

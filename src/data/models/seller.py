@@ -1,17 +1,28 @@
-from werkzeug.security import check_password_hash
-from src.app import db
+class Seller:
+    def __init__(self, name, email, store_name, password, _id=None):
+        self._id = str(_id) if _id else None
+        self.name = name
+        self.email = email
+        self.store_name = store_name
+        self.password = password
 
+    def to_dict(self):
+        data = {
+            "name": self.name,
+            "email": self.email,
+            "store_name": self.store_name,
+            "password": self.password
+        }
+        if self._id:
+            data["_id"] = self._id
+        return data
 
-def create_user(self):
-        db.users.insert_one({
-            'username': self.username,
-            'email': self.email,
-            'password': self.password
-        })
-
-
-def find_user_by_email(email, password):
-       return db.users.find_one({'email': email, 'password': password})
-
-def check_user_password(self, user, password):
-        return check_password_hash(user['password'], password)
+    @classmethod
+    def from_dict(cls, data):
+        return cls(
+            name=data.get("name"),
+            email=data.get("email"),
+            store_name=data.get("store_name"),
+            password=data.get("password"),
+            _id=data.get("_id")
+        )
