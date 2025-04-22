@@ -2,24 +2,20 @@ from flask import Flask
 from flask_socketio import SocketIO
 from flask_pymongo import PyMongo
 from config import Config
+from src.controllers.auth_controller import auth_bp
+from src.controllers.bidders_controller import bidders_bp
+from src.controllers.sellers_controller import sellers_bp
+from src.controllers.listings_controller import product_bp
 
-socketio = SocketIO(cors_allowed_origins="*")
-mongo = PyMongo()
+app = Flask(__name__)
+app.register_blueprint(auth_bp)
 
-def create_app():
-    app = Flask(__name__, template_folder="../external_templates")
-    app.config.from_object(Config)
+app.register_blueprint(bidders_bp, url_prefix="/bidders")
 
-    mongo.init_app(app)
-    socketio.init_app(app)
+app.register_blueprint(sellers_bp, url_prefix="/sellers")
 
-    # Import and register blueprints
-    from src.controllers.bidders_controller import bidders_bp
-    from src.controllers.sellers_controller import sellers_bp
-    from src.controllers.product_controller import product_bp
+app.register_blueprint(product_bp, url_prefix="/products")
 
-    app.register_blueprint(bidders_bp, url_prefix="/bidders")
-    app.register_blueprint(sellers_bp, url_prefix="/sellers")
-    app.register_blueprint(product_bp, url_prefix="/products")
 
-    return app
+if __name__ == '__main__':
+    app.run(debug=True)
