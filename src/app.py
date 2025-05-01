@@ -1,21 +1,16 @@
-from flask import Flask
-from flask_socketio import SocketIO
+from flask import Flask, render_template
 from flask_pymongo import PyMongo
-from config import Config
-from src.controllers.auth_controller import auth_bp
-from src.controllers.bidders_controller import bidders_bp
-from src.controllers.sellers_controller import sellers_bp
-from src.controllers.listings_controller import product_bp
+from flask_login import LoginManager
 
 app = Flask(__name__)
-app.register_blueprint(auth_bp)
+app.config["MONGO_URI"] = "mongodb://localhost:27017/auction_db"
+app.secret_key = "your_secret_key"  # Change this to a random secret key
+mongo = PyMongo(app)
+login_manager = LoginManager(app)
 
-app.register_blueprint(bidders_bp, url_prefix="/bidders")
-
-app.register_blueprint(sellers_bp, url_prefix="/sellers")
-
-app.register_blueprint(product_bp, url_prefix="/products")
-
+@app.route('/')
+def home():
+    return render_template('home.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

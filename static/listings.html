@@ -1,31 +1,31 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport">
-    <title>Document</title>
-</head>
-<body>
-<h1>All Listings</h1>
-{% for listing in listings %}
-    <div>
-        <h2><a href="{{ url_for('listings.listing_detail', listing_id=listing._id) }}">{{ listing.title }}</a></h2>
-        <p>By {{ listing.seller_name }} | Starting at ${{ listing.start_price }}</p>
-        <img src="{{ listing.image_url }}" width="200">
-    </div>
-{% endfor %}
-<a href="{{ url_for('listings.create') }}">Create New Listing</a>
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport">-->
+<!--    <title>Document</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>All Listings</h1>-->
+<!--{% for listing in listings %}-->
+<!--    <div>-->
+<!--        <h2><a href="{{ url_for('listings.listing_detail', listing_id=listing._id) }}">{{ listing.title }}</a></h2>-->
+<!--        <p>By {{ listing.seller_name }} | Starting at ${{ listing.start_price }}</p>-->
+<!--        <img src="{{ listing.image_url }}" width="200">-->
+<!--    </div>-->
+<!--{% endfor %}-->
+<!--<a href="{{ url_for('listings.create') }}">Create New Listing</a>-->
 
-<div class="create listing">
-    <form method="post">
-    <input name="title" placeholder="Title" required><br>
-    <textarea name="description" placeholder="Description"></textarea><br>
-    <input name="start_price" placeholder="Starting Price" required><br>
-    <input name="image_url" placeholder="Image URL"><br>
-    <button type="submit">Create</button>
-</form>
+<!--<div class="create listing">-->
+<!--    <form method="post">-->
+<!--    <input name="title" placeholder="Title" required><br>-->
+<!--    <textarea name="description" placeholder="Description"></textarea><br>-->
+<!--    <input name="start_price" placeholder="Starting Price" required><br>-->
+<!--    <input name="image_url" placeholder="Image URL"><br>-->
+<!--    <button type="submit">Create</button>-->
+<!--</form>-->
 
-</div>
+<!--</div>-->
 
-</body>
-</html>
+<!--</body>-->
+<!--</html>-->

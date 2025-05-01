@@ -1,26 +1,24 @@
 from bson.objectid import ObjectId
-from src.app import mongo
+from src.extensions import mongo
 
 class SellerRepository:
     def __init__(self):
-        self.collection = mongo.db.sellers
+        pass
+
+    def find_all(self):
+        return list(mongo.db.sellers.find())
 
     def insert_seller(self, seller_data):
-        result = self.collection.insert_one(seller_data)
-        seller_data["_id"] = str(result.inserted_id)
-        return seller_data
+        return mongo.db.sellers.insert_one(seller_data)
 
     def find_by_email(self, email):
-        seller = self.collection.find_one({"email": email})
-        if seller:
-            seller["_id"] = str(seller["_id"])
-        return seller
+        return mongo.db.sellers.find_one({"email": email})
 
     def find_by_id(self, seller_id):
-        try:
-            seller = self.collection.find_one({"_id": ObjectId(seller_id)})
-            if seller:
-                seller["_id"] = str(seller["_id"])
-            return seller
-        except Exception:
-            return None
+        return mongo.db.sellers.find_one({"_id": seller_id})
+
+    def update_one(self, seller_id, update_data):
+        return mongo.db.sellers.update_one({"_id": seller_id}, {"$set": update_data})
+
+    def delete_one(self, seller_id):
+        return mongo.db.sellers.delete_one({"_id": seller_id})

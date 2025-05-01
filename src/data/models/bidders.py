@@ -1,19 +1,19 @@
 class Bidder:
-    def __init__(self, name, email, password, _id=None):
-        self._id = str(_id) if _id else None
-        self.name = name
+    def __init__(self, email, username, password, user_type="bidder"):
+        self.username = username
         self.email = email
         self.password = password
+        self.user_type = user_type
 
     def to_dict(self):
         data = {
-            "name": self.name,
+            "name": self.username,
             "email": self.email,
-            "password": self.password
+            "password": self.password,
+            "user_type": self.user_type
         }
-        if self._id:
-            data["_id"] = self._id
-        return data
+        if self.user_type == "bidder":
+            data["bidders"] = []
 
     @classmethod
     def from_dict(cls, data):

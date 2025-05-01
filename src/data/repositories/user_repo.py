@@ -1,9 +1,9 @@
 from src.db import get_db
-from src.data.user import User
+from src.data.models.user import User
 
 class UserRepo:
     def __init__(self):
-        self.collection = get_db().users  # MongoDB collection
+        self.collection = get_db().users
 
     def create(self, user: User):
         user_dict = user.to_dict()

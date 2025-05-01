@@ -1,4 +1,4 @@
-from src.repositories.product_repo import ProductRepository
+from src.data.repositories.listings_repo import ProductRepository
 from src.exceptions.custom_exceptions import BadRequestError
 
 class ProductService:

@@ -1,7 +1,7 @@
 from werkzeug.security import generate_password_hash, check_password_hash
-from src.data.user import User
-from src.dto.user_dto import UserDTO
-from src.repositories.user_repo import UserRepo
+from src.data.models.user import User
+from src.dto.userdto.user_dto import UserDTO
+from src.data.repositories.user_repo import UserRepo
 
 class AuthService:
     def __init__(self):
@@ -10,14 +10,14 @@ class AuthService:
     def register(self, data):
         dto = UserDTO(data)
 
-        # Check if email already exists
+
         if self.user_repo.find_by_email(dto.email):
             raise ValueError("Email already registered")
 
-        # Hash password
+
         hashed_password = generate_password_hash(dto.password)
 
-        # Create user object
+
         user = User(
             name=dto.name,
             email=dto.email,

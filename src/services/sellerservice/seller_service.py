@@ -1,4 +1,4 @@
-from src.repositories.seller_repo import SellerRepository
+from src.data.repositories.seller_repo import SellerRepository
 from src.exceptions.custom_exceptions import BadRequestError
 
 class SellerService:
