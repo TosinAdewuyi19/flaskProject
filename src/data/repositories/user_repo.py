@@ -1,18 +1,11 @@
-from src.db import get_db
-from src.data.models.user import User
+from flask_pymongo import PyMongo
 
-class UserRepo:
-    def __init__(self):
-        self.collection = get_db().users
+class UserRepository:
+    def __init__(self, mongo: PyMongo):
+        self.mongo = mongo
 
-    def create(self, user: User):
-        user_dict = user.to_dict()
-        result = self.collection.insert_one(user_dict)
-        user_dict["_id"] = str(result.inserted_id)
-        return user_dict
+    def find_user_by_username(self, username):
+        return self.mongo.db.users.find_one({'username': username})
 
-    def find_by_email(self, email):
-        user = self.collection.find_one({"email": email})
-        if user:
-            user["_id"] = str(user["_id"])
-        return user
+    def create_user(self, user_data):
+        self.mongo.db.users.insert_one(user_data)

@@ -8,5 +8,18 @@
 <body>
     <h1>Welcome to the Auction App</h1>
     <p><a href="/auctions">View Auctions</a></p>
+
+    <h2>Create Auction</h2>
+<form action="/create_auction" method="post" enctype="multipart/form-data">
+    <input type="text" name="title" placeholder="Title" required>
+    <textarea name="description" placeholder="Description" required></textarea>
+    <input type="number" name="starting_bid" placeholder="Starting Bid" required>
+    <input type="file" name="image" accept="image/*" required>
+    <button type="submit">Create Auction</button>
+</form>
+<h2>User Authentication</h2>
+<p><a href="/register">Register</a></p>
+<p><a href="/login">Login</a></p>
+
 </body>
 </html>
